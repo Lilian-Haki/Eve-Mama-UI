@@ -2,7 +2,7 @@ import React from "react";
 import logo from '../../../assets/images/logo.jpg'
 function SideNav() {
   return (
-    <div className="-mt-[80px] w-[250px] bg-orange-400 h-[650px]">
+    <div className="-mt-[80px] w-[250px] bg-purple-500 h-[650px]">
       <div>
         <img className="h-[150px] w-[150px] ml-9 pt-2 rounded-[100%]" src={logo} alt="" />
       </div>
