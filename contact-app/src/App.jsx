@@ -7,6 +7,7 @@ import AddAppointment from "./components/patient/appointments/addApointment";
 import PendingAppointment from "./components/patient/appointments/pendingAppointment";
 import ApprovedAppointment from "./components/patient/appointments/approvedAppointments";
 import CompletedAppointments from "./components/patient/appointments/completedAppointment";
+import LandingPage from "./components/landingpage";
 function App() {
   return (
       <Router>
@@ -18,6 +19,7 @@ function App() {
           <Route path="approved_appointment" element={<ApprovedAppointment/>}/>
           <Route path="pending_appointment" element={<PendingAppointment/>}/>
           <Route path="completed_appointment" element={<CompletedAppointments/>} />
+          <Route path="/" element={<LandingPage/>}/>
         </Routes>
       </Router>
   );
