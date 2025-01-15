@@ -1,5 +1,5 @@
 import React from "react";
-import loginpic from '../../assets/images/login.png';
+import loginpic from "../../assets/images/login.png";
 function Login() {
   return (
     <div className="inline-flex rounded ml-[250px] mt-[100px]">
@@ -16,10 +16,11 @@ function Login() {
             <input type="text" placeholder="Enter Username" /><br></br>
             <label htmlFor="">Enter Password</label><br></br>
             <input type="text" placeholder="Enter Password" /><br></br>
+            <button>Login</button><br></br>
             <a href="">Do you need any Help?</a>
             <div>
                 <button>Quit</button>
-                <button>Login</button>
+                <button>Register</button>
             </div>
         </form>
       </div>

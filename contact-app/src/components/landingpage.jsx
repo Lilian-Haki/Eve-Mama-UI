@@ -3,6 +3,7 @@ import childbirth from "../assets/images/childbirth.jpg"
 import prenatal from "../assets/images/prenatal.jpg"
 import postbirth from "../assets/images/postbirth.jpg"
 import bessentials from "../assets/images/childbirth.jpg"
+import about from "../components/landingpage.jsx";
 
 function LandingPage() {
   const [selectedOption, setSelectedOption] = useState("");
@@ -16,10 +17,10 @@ function LandingPage() {
         <div className="inline-flex">
           <div>Eve Mama Midwife Clinic</div>
           <div className="inline-flex mt-[40px] gap-5 ml-[620px]">
-            <p>Home</p>
-            <p>About</p>
-            <p>Services</p>
-            <p>Contact</p>
+            <p><a href="/">Home</a></p>
+            <p><a href="#about">About</a></p>
+            <p><a href="#services">Services</a></p>
+            <p><a href="#contact">Contact</a></p>
             <div className="flex">
               <select
                 className=" "
@@ -46,13 +47,13 @@ function LandingPage() {
         </div>
         </div>
         {/* About Section */}
-        <div className="text-center mt-[250px] ml-[180px] mr-[190px]">
+        <div id="about" className="text-center mt-[250px] ml-[180px] mr-[190px]">
           <p>About Us</p>
           <h3 className="font-roboto text-slate-400">Midwife led, continuous, quality, and evidence based care and support is what parents and their families get from eve’smama during their Pre-pregnancy, Pregnancy, Birth and Early Parenting Phases of their life.
             We believe in a woman’s ability to birth her baby. We therefore provide practical guidance, support and information to build her confidence and enable her to make informed choices on how to birth. We believe the experience of childbirth is beyond the physical event, and is a profound emotional, mental and spiritual experience for both the mother and her family.We therefore provide one to one care that is personalized and holistic. We ensure that every parent has the chance to create a relationship of trust with a midwife who knows what they want and truly respects their wishes. We embrace collaboration with others and will involve Physicians, Obstetricians, Pediatricians, Counsellors, Massage Therapists and other care providers when need arises.</h3>
         </div>
         {/* Services Section */}
-        <div>
+        <div id="services">
         <p className="text-center m-8">Our Services</p>
         {/* Prenatal */}
         <div className="flex mb-[100px]">
@@ -134,7 +135,7 @@ function LandingPage() {
         </div>
 
         {/* Contact section */}
-        <div className="text-center bg-yellow-50">
+        <div id="contact" className="text-center bg-yellow-50">
             <p>Contact Us</p>
             <p>Ready to start our journey with us?Reach out to us.</p>
             <div className="flex gap-[100px] ml-[160px]">
