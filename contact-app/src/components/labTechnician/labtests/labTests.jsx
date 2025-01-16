@@ -1,79 +1,94 @@
-import React, { useState } from "react";
-import TopNav from "../nav/topnav";
-import SideNav from "../nav/sidenav"
+import React, { useState, useEffect } from "react";
 
-const LabTestsList = () => {
-  // Sample data for lab tests
-  const [labTests, setLabTests] = useState([
-    {
-      id: 1,
-      testName: "Complete Blood Count (CBC)",
-      date: "2024-12-10",
-      result: "Normal",
-      note: "All parameters within normal range.",
-    },
-    {
-      id: 2,
-      testName: "Liver Function Test (LFT)",
-      date: "2024-12-11",
-      result: "Elevated ALT levels",
-      note: "Indicates mild liver inflammation. Follow-up recommended.",
-    },
-    {
-      id: 3,
-      testName: "Cholesterol Test",
-      date: "2024-12-12",
-      result: "High LDL cholesterol",
-      note: "Consider dietary changes and consult a specialist.",
-    },
-    {
-      id: 4,
-      testName: "Blood Sugar Test",
-      date: "2024-12-13",
-      result: "Normal",
-      note: "Fasting and post-meal levels are within range.",
-    },
-  ]);
+const LabTestsSection = () => {
+  const [labTests, setLabTests] = useState([]);
+  const [filter, setFilter] = useState("pending");
+//Action button
+// const markAsCompleted = (id) => {
+//   setLabTests((prev) =>
+//     prev.map((test) =>
+//       test.id === id ? { ...test, status: "completed" } : test
+//     )
+//   );
+// };
+
+  // Sample data for lab tests (replace with API integration)
+  useEffect(() => {
+    const fetchLabTests = async () => {
+      const data = [
+        { id: 1, patient: "John Doe", test: "Blood Test", date: "2024-12-20", status: "pending" },
+        { id: 2, patient: "Jane Smith", test: "Urine Analysis", date: "2024-12-19", status: "completed" },
+        { id: 3, patient: "Michael Brown", test: "X-Ray", date: "2024-12-18", status: "pending" },
+        { id: 4, patient: "Alice Green", test: "CT Scan", date: "2024-12-17", status: "completed" },
+      ];
+      setLabTests(data);
+    };
+    fetchLabTests();
+  }, []);
+
+  // Filter lab tests based on status
+  const filteredLabTests = labTests.filter((test) => test.status === filter);
 
   return (
-    <div>
-    <TopNav/>
-    <SideNav/>    
-    <div className="ml-[270px] -mt-[570px] min-h-screen bg-gray-100 p-8">
-      <div className="max-w-6xl mx-auto bg-white shadow-md rounded-md p-6">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6">Lab Tests Performed</h1>
+    <div className="min-h-screen bg-gray-100 p-8">
+      <div className="max-w-4xl mx-auto bg-white shadow-md rounded-md p-6">
+        <h1 className="text-2xl font-bold text-gray-800 mb-6">Lab Tests</h1>
 
-        {labTests.length > 0 ? (
-          <div className="space-y-4">
-            {labTests.map((test) => (
+        {/* Filter Tabs */}
+        <div className="flex space-x-4 mb-6">
+          <button
+            onClick={() => setFilter("pending")}
+            className={`px-4 py-2 font-medium rounded-md ${
+              filter === "pending"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-200 text-gray-800"
+            }`}
+          >
+            Pending
+          </button>
+          <button
+            onClick={() => setFilter("completed")}
+            className={`px-4 py-2 font-medium rounded-md ${
+              filter === "completed"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-200 text-gray-800"
+            }`}
+          >
+            Completed
+          </button>
+        </div>
+
+        {/* Lab Tests List */}
+        <div className="space-y-4">
+          {filteredLabTests.length > 0 ? (
+            filteredLabTests.map((test) => (
               <div
                 key={test.id}
-                className="p-4 bg-gray-50 border border-gray-200 rounded-md shadow"
+                className="p-4 border rounded-md flex justify-between items-center"
               >
                 <div>
-                  <p className="text-lg font-semibold text-gray-800">
-                    {test.testName}
-                  </p>
-                  <p className="text-sm text-gray-700">
-                    <span className="font-bold">Date:</span> {test.date}
-                  </p>
-                  <p className="text-sm text-gray-700">
-                    <span className="font-bold">Result:</span> {test.result}
-                  </p>
-                  <p className="text-sm text-gray-700">
-                    <span className="font-bold">Note:</span> {test.note}
-                  </p>
+                  <p className="text-lg font-medium text-gray-800">{test.patient}</p>
+                  <p className="text-sm text-gray-600">Test: {test.test}</p>
+                  <p className="text-sm text-gray-600">Date: {test.date}</p>
                 </div>
+                <span
+                  className={`px-3 py-1 text-sm font-medium rounded-md ${
+                    test.status === "pending"
+                      ? "bg-yellow-100 text-yellow-800"
+                      : "bg-green-100 text-green-800"
+                  }`}
+                >
+                  {test.status.charAt(0).toUpperCase() + test.status.slice(1)}
+                </span>
               </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-gray-500">No lab tests performed.</p>
-        )}
+            ))
+          ) : (
+            <p className="text-center text-gray-600">No lab tests found.</p>
+          )}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
 
-export default LabTestsList;
+export default LabTestsSection;

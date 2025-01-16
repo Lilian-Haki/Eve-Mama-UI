@@ -1,28 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     backgroundSize: {
-      'auto': 'auto',
-      'cover': 'cover',
-      'contain': 'contain',
-      '50%': '50%',
-      '16': '4rem',
+      auto: "auto",
+      cover: "cover",
+      contain: "contain",
+      "50%": "50%",
+      16: "4rem",
     },
     extend: {
-      colors:{
-
-      },
-      fontFamily:{
-         roboto: ['Roboto', 'sans-serif'],   
+      colors: {},
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
       },
     },
   },
   plugins: [],
-}
+};
+//Dark mode
+/* tailwind.config.js */
+// module.exports = {
+//   darkMode: 'class', // Enable dark mode
+// Other configurations
+// };
 
 // /** @type {import('tailwindcss').Config} */
 // eslint-disable-next-line no-undef
@@ -52,7 +53,7 @@ export default {
 //       },
 //       fontFamily: {
 //         montserrat: ["Montserrat", "Arial", "sans-serif"],
-//         roboto: ['Roboto', 'sans-serif'],   
+//         roboto: ['Roboto', 'sans-serif'],
 //         inter:['inter'],
 //        },
 //       fontSize: {
@@ -78,4 +79,3 @@ export default {
 //   },
 //   plugins: [],
 // };
- 
