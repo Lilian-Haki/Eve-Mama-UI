@@ -7,7 +7,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 function TopNav() {
   
   return (
-    <div className="ml-[250px]">
+    <div className="w-[1150px] fixed ml-[250px]">
       <nav className="h-[60px] bg-amber-100">
         <div className="inline-flex">
           <div className="mt-[16px] ml-4 text-[25px] font-cursive"> Eve&apos;s Mama Midwife Clinic</div>

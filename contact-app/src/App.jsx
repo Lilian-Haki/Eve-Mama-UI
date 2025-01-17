@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SLogin from "./components/staffLogin";
+import SRegister from "./components/staffRegister"
 import PLogin from "./components/patient/login/plogin";
 import PRegister from "./components/patient/login/pregister";
 import PDashboard from "./components/patient/dashboard/dashboard";
@@ -20,6 +22,9 @@ function App() {
   return (
       <Router>
         <Routes>
+          {/* Shared */}
+         <Route path="staff_register" element={<SRegister />} />
+         <Route path="staff_login" element={<SLogin />} />
           {/* Patient */}
           <Route path="login" element={<PLogin />} />
           <Route path="register" element={<PRegister/>}/>

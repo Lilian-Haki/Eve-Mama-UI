@@ -41,7 +41,7 @@ const ReceiptList = () => {
     <div>
     <TopNav/>
     <SideNav/>    
-    <div className="ml-[270px] -mt-[570px] min-h-screen bg-gray-100 p-8">
+    <div className="ml-[270px] min-h-screen bg-gray-100 p-8">
       <div className="max-w-6xl mx-auto bg-white shadow-md rounded-md p-6">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">Receipts</h1>
 

@@ -28,7 +28,7 @@ const PatientAppointments = () => {
     <div>
     <TopNav/>
     <SideNav/>    
-    <div className="ml-[270px] -mt-[570px] min-h-screen bg-gray-100 p-8">
+    <div className="ml-[270px] min-h-screen bg-gray-100 py-[100px] px-8">
       <div className="max-w-1xl mx-auto bg-white shadow-md rounded-md p-6">
         <h1 className="text-2xl font-bold text-gray-800 mb-4">Manage Appointments</h1>
 
@@ -70,7 +70,7 @@ const PatientAppointments = () => {
 
           <button
             onClick={addAppointment}
-            className="w-full bg-blue-500 text-white font-medium py-2 px-4 rounded-md shadow hover:bg-blue-600 transition"
+            className="w-full bg-purple-500 text-white font-medium py-2 px-4 rounded-md shadow hover:bg-purple-600 transition"
           >
             Add Appointment
           </button>

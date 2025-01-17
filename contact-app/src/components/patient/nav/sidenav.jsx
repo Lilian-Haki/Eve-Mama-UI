@@ -27,7 +27,7 @@ function SideNav() {
   };
     
   return (
-    <div className="-mt-[80px] w-[250px] bg-purple-500 h-auto">
+    <div className="fixed w-[250px] bg-purple-500 h-auto">
       <div>
         <img
           className="h-[150px] w-[150px] ml-9 pt-2 rounded-[100%]"
