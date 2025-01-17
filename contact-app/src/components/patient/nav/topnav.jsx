@@ -1,39 +1,21 @@
-import { useState, React } from "react";
-import profile from "../../../assets/images/profilef.jpg";
+import { React } from "react";
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
+
 
 function TopNav() {
-  const [selectedOption, setSelectedOption] = useState("");
-  const handleChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
+  
   return (
     <div className="ml-[250px]">
-      <nav className="h-[80px] bg-yellow-100">
+      <nav className="h-[60px] bg-amber-100">
         <div className="inline-flex">
-          <div>Eve Mama Midwife Clinic</div>
-          <div className="inline-flex mt-[40px] gap-5 ml-[620px]">
-            <p>
-              Hello, Good Afternoon<span> Lilian</span>
-            </p>
-            <div className="flex">
-              <img
-                className="relative rounded-[100%] h-[40px] w-[40px]"
-                src={profile}
-                alt=""
-              />
-              <select
-                className="-ml-14 "
-                value={selectedOption}
-                onChange={handleChange}
-              >
-                <option value="" disabled></option>
-                <option value="option1">Profile</option>
-                <option value="option2">About</option>
-                <option value="option3">Contacts</option>
-                <option value="option3">Help</option>
-                <option value="option3">Logout</option>
-              </select>
-              {selectedOption && <p>You selected: {selectedOption}</p>}
+          <div className="mt-[16px] ml-4 text-[25px] font-cursive"> Eve&apos;s Mama Midwife Clinic</div>
+          <div className="inline-flex mt-[30px] ml-[730px]">
+            <div className="flex gap-4">
+            <NotificationsActiveIcon/>
+            <AccountCircleIcon/>
+            <LogoutIcon/>
             </div>
           </div>
         </div>

@@ -10,7 +10,6 @@ import CompletedAppointments from "./components/patient/appointments/completedAp
 import LandingPage from "./components/landingpage";
 import PendingPayments from "./components/patient/finances/pendingPayments";
 import CompletedPayments from "./components/patient/finances/completedPayments";
-import ApprovedPayments from "./components/patient/finances/approvedPayments";
 import PrescriptionList from "./components/patient/prescriptions/prescriptions";
 import ReceiptList from "./components/patient/receipts/receipts";
 import LabTestsList from "./components/patient/labtests/labTests";
@@ -30,9 +29,8 @@ function App() {
           <Route path="approved_appointment" element={<ApprovedAppointment/>}/>
           <Route path="pending_appointment" element={<PendingAppointment/>}/>
           <Route path="completed_appointment" element={<CompletedAppointments/>} />
-          <Route path="pending_paymens" element={<PendingPayments/>}/>
+          <Route path="pending_payments" element={<PendingPayments/>}/>
           <Route path="completed_payments" element={<CompletedPayments/>}/>
-          <Route path="approved_payments" element={<ApprovedPayments/>}/>
           <Route path="prescriptions" element={<PrescriptionList/>}/>
           <Route path="receipts" element={<ReceiptList/>}/>
           <Route path="lab_tests" element={<LabTestsList/>}/>

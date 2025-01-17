@@ -13,6 +13,7 @@ export default {
       colors: {},
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
+        cursive:["Brush Script MT"]
       },
     },
   },

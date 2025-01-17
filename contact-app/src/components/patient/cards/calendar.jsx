@@ -12,9 +12,9 @@ const AppointmentsCalendar = () => {
   const formatDate = (date) => date.toISOString().split("T")[0];
 
   return (
-    <div>
-      <h1>Appointments Calendar</h1>
-      <Calendar className="w-[400px] rounded-lg" onChange={setValue} value={value} />
+    <div className="mt-[20px]">
+      <h1 className="font-roboto text-neutral-700 bg-purple-300">Appointments Calendar</h1>
+      <Calendar className="w-[400px] rounded-lg border-purple-200" onChange={setValue} value={value} />
       <div>
         <h3>Appointments for {formatDate(value)}</h3>
         {appointments[formatDate(value)] ? (
