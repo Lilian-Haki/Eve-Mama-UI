@@ -1,43 +1,25 @@
 import { useState, React } from "react";
+import {Link} from "react-router-dom";
 import logo from "../../../assets/images/logo.jpg";
-function SideNav() {
+import { HomeOutlined,CalendarOutlined,MedicineBoxOutlined,MessageOutlined,DotChartOutlined} from '@ant-design/icons';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+
+function MidSideNav() {
+  const [selected, setSelected] = useState("dashboard"); // Default selection
+
   const [openDropdown, setOpenDropdown] = useState(null);
-
-  const menuItems = [
-    {
-      id: 1,
-      label: "Dashboard",
-    },
-    {
-      id: 2,
-      label: "Appointments",
-      dropdown: [
-        "Add Appointment",
-        "Pending Appointments",
-        "Approved Appointments",
-        "Completed",
-      ],
-    },
-    {
-      id: 3,
-      label: "Finances",
-      dropdown: ["Pending Payments", "Approved Payments", "Completed"],
-    },
-    {
-      id: 4,
-      label: "Prescription",
-    },
-    {
-      id: 5,
-      label: "Receipts",
-    },
-  ];
-
-  const toggleDropdown = (id) => {
-    setOpenDropdown(openDropdown === id ? null : id);
+  const handleClick = (menu) => {
+    setSelected(menu);
+    if (menu === "appointments") {
+      setOpenDropdown(openDropdown === "appointments" ? null : "appointments"); // Toggle "appointments" dropdown
+    } else {
+      setOpenDropdown(null); // Close any dropdown
+    }
   };
+  
+    
   return (
-    <div className="-mt-[80px] w-[250px] bg-purple-500 h-[650px]">
+    <div className="fixed w-[250px] bg-purple-500 h-auto">
       <div>
         <img
           className="h-[150px] w-[150px] ml-9 pt-2 rounded-[100%]"
@@ -45,65 +27,151 @@ function SideNav() {
           alt=""
         />
       </div>
-      <div
-        style={{
-          width: "250px",
-          backgroundColor: "#f8f9fa",
-          height: "100vh",
-          padding: "20px",
-          boxShadow: "2px 0 5px rgba(0,0,0,0.1)",
-        }}
-      >
-        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-          {menuItems.map((item) => (
-            <li key={item.id} style={{ marginBottom: "10px" }}>
-              <div
-                onClick={() => toggleDropdown(item.id)}
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  cursor: "pointer",
-                  padding: "10px",
-                  backgroundColor: "#e9ecef",
-                  borderRadius: "5px",
-                }}
+
+      {/* Dashboard */}
+      <Link to="/mid_dashboard">
+          <button
+            className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 mt-4 ml-6 w-[200px] rounded-lg hover:bg-purple-300 `}
+            style={{
+              backgroundColor:
+                selected === "dashboard" ? "#6A1B9A" : "",
+              color: selected === "dashboard" ? "white" : "black",
+            }}
+            onClick={() => handleClick("dashboard")}
+          >
+            <HomeOutlined /> 
+            <p className="font-roboto text-lg">Dashboard</p>
+          </button>
+        </Link>
+
+  {/* Appointments */}
+  <div className="ml-6 mt-6">
+        <button
+          className={`w-[200px] h-14 py-2 px-4 items-center gap-3 flex rounded-lg ${
+            openDropdown === "appointments"? "bg-purple-800 text-white" : "hover:bg-purple-300"
+          }`}
+          onClick={() => handleClick("appointments")}
+        >
+          <CalendarOutlined />
+          <p className="font-roboto text-lg">Appointments</p>
+        </button>
+
+        {/* Dropdown Menu */}
+        {openDropdown === "appointments" && (
+          <div className="ml-8 mt-2 flex flex-col space-y-2">
+            <Link to="/mid_add_appointment">
+              <button
+                className={`w-[160px] h-10 py-1 px-4 text-left rounded-lg hover:bg-purple-300 ${
+                  selected === "appointments-new" ? "bg-purple-600 text-white" : ""
+                }`}
+                onClick={() => setSelected("appointments-new")}
               >
-                <span>{item.label}</span>
-                {item.dropdown && (
-                  <span>{openDropdown === item.id ? "▲" : "▼"}</span>
-                )}
-              </div>
-              {/* Dropdown Menu */}
-              {item.dropdown && openDropdown === item.id && (
-                <ul
-                  style={{
-                    listStyle: "none",
-                    paddingLeft: "20px",
-                    marginTop: "5px",
-                  }}
-                >
-                  {item.dropdown.map((subItem, index) => (
-                    <li
-                      key={index}
-                      style={{
-                        padding: "5px",
-                        cursor: "pointer",
-                        backgroundColor: "#f1f1f1",
-                        borderRadius: "3px",
-                        marginBottom: "5px",
-                      }}
-                    >
-                      {subItem}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
+                New
+              </button>
+            </Link>
+            <Link to="/mid_pending_appointment">
+              <button
+                className={`w-[160px] h-10 py-1 px-4 text-left rounded-lg hover:bg-purple-300 ${
+                  selected === "appointments-pending"
+                    ? "bg-purple-600 text-white"
+                    : ""
+                }`}
+                onClick={() => setSelected("appointments-pending")}
+              >
+                Pending
+              </button>
+            </Link>
+            <Link to="/mid_approved_appointment">
+              <button
+                className={`w-[160px] h-10 py-1 px-4 text-left rounded-lg hover:bg-purple-300 ${
+                  selected === "appointments-approved"
+                    ? "bg-purple-600 text-white"
+                    : ""
+                }`}
+                onClick={() => setSelected("appointments-approved")}
+              >
+                Approved
+              </button>
+            </Link>
+            <Link to="/mid_completed_appointment">
+              <button
+                className={`w-[160px] h-10 py-1 px-4 text-left rounded-lg hover:bg-purple-300 ${
+                  selected === "appointments-completed"
+                    ? "bg-purple-600 text-white"
+                    : ""
+                }`}
+                onClick={() => setSelected("appointments-completed")}
+              >
+                Completed 
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
-    </div>
+
+      {/* Lab Tests */}
+      <Link to="/mid_lab_tests">
+          <button
+            className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 mt-4 ml-6 w-[200px] rounded-lg hover:bg-purple-300 `}
+            style={{
+              backgroundColor:
+                selected === "labtests" ? "#6A1B9A" : "",
+              color: selected === "labtests" ? "white" : "black",
+            }}
+            onClick={() => handleClick("labtests")}
+          >
+          <DotChartOutlined />
+            <p className="font-roboto text-lg">Lab Tests</p>
+          </button>
+        </Link>
+
+        {/* Prescription */}
+        <Link to="/mid_prescriptions">
+            <button
+              className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 mt-4 ml-6 w-[200px] rounded-lg hover:bg-purple-300 `}
+              style={{
+                backgroundColor:
+                  selected === "prescriptions" ? "#6A1B9A" : "",
+                color: selected === "prescriptions" ? "white" : "black",
+              }}
+              onClick={() => handleClick("prescriptions")}
+            >
+              <MedicineBoxOutlined />
+              <p className="font-roboto text-lg">Prescription</p>
+            </button>
+          </Link>
+
+    {/* Messages */}
+    <Link to="/mid_messages">
+          <button
+            className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 mt-4 ml-6 w-[200px] rounded-lg hover:bg-purple-300 `}
+            style={{
+              backgroundColor:
+                selected === "messages" ? "#6A1B9A" : "",
+              color: selected === "messages" ? "white" : "black",
+            }}
+            onClick={() => handleClick("messages")}
+          >
+            <MessageOutlined />
+          <p className="font-roboto text-lg">Messages</p>
+          </button>
+        </Link>
+
+    {/* Help */}
+    <Link to="/mid_help">
+          <button
+            className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 mt-4 ml-6 w-[200px] rounded-lg `}
+            style={{
+              color: selected === "help" ? "purple" : "pink",
+            }}
+            onClick={() => handleClick("help")}
+          >
+            <HelpOutlineOutlinedIcon/>
+            <p className="">Need Help?</p>
+          </button>
+        </Link>
+
+   </div>
   );
 }
-export default SideNav;
+export default MidSideNav;

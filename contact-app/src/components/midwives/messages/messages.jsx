@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import TopNav from "../nav/topnav";
+import SideNav from "../nav/sidenav"
 
 const MessagesSection = () => {
   // Sample conversation data
@@ -26,7 +28,10 @@ const MessagesSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div>
+    <TopNav/>
+    <SideNav/>    
+    <div className="min-h-screen pl-[150px] pt-[80px]">
       <div className="max-w-4xl mx-auto bg-white shadow-md rounded-md p-6 flex flex-col">
         <h1 className="text-2xl font-bold text-gray-800 mb-4">Messages</h1>
 
@@ -74,6 +79,7 @@ const MessagesSection = () => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

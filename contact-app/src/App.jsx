@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SLogin from "./components/staffLogin";
 import SRegister from "./components/staffRegister"
+
+// Patient imports
 import PLogin from "./components/patient/login/plogin";
 import PRegister from "./components/patient/login/pregister";
 import PDashboard from "./components/patient/dashboard/dashboard";
@@ -17,7 +19,18 @@ import ReceiptList from "./components/patient/receipts/receipts";
 import LabTestsList from "./components/patient/labtests/labTests";
 
 // Midwives
-import MidDashboard from "./components/midwives/dashboard/dashoardComponents";
+import MidDashboard from "./components/midwives/dashboard/dashboard";
+import MidAddAppointments from "./components/midwives/appointments/addApointment";
+import MidPendingAppointments from "./components/midwives/appointments/pendingAppointment";
+import MidApprovedAppointments from "./components/midwives/appointments/approvedAppointments";
+import MidCompletedAppointments from "./components/midwives/appointments/completedAppointment";
+import MidLabTestsList from "./components/midwives/labtests/labTests";
+import MidPrescriptionList from "./components/midwives/prescriptions/prescriptions";
+import MidHelp from "./components/midwives/help/help";
+import MidMessages from "./components/midwives/messages/messages";
+import MidNotifications from "./components/midwives/notification/notification";
+import MidSettings from "./components/midwives/settings/settings";
+
 function App() {
   return (
       <Router>
@@ -41,14 +54,16 @@ function App() {
           <Route path="lab_tests" element={<LabTestsList/>}/>
           {/* Midwives */}
           <Route path="mid_dashboard" element={<MidDashboard/>} />
-          <Route path="mid_calendar" element={<AddAppointment/>}/>
-          <Route path="mid_approved_appointment" element={<ApprovedAppointment/>}/>
-          <Route path="mid_pending_appointment" element={<PendingAppointment/>}/>
-          <Route path="mid_completed_appointment" element={<CompletedAppointments/>} />
-          <Route path="mid_messages" element={<PDashboard/>} />
-          <Route path="mid_dashboard" element={<PDashboard/>} />
-          <Route path="mid_notifications" element={<PDashboard/>} />
-          <Route path="mid_settings" element={<PDashboard/>} />
+          <Route path="mid_add_appointment" element={<MidAddAppointments/>}/>
+          <Route path="mid_approved_appointment" element={<MidApprovedAppointments/>}/>
+          <Route path="mid_pending_appointment" element={<MidPendingAppointments/>}/>
+          <Route path="mid_completed_appointment" element={<MidCompletedAppointments/>} />
+          <Route path="mid_lab_tests" element={<MidLabTestsList/>}/>
+          <Route path="mid_prescriptions" element={<MidPrescriptionList/>}/>
+          <Route path="mid_messages" element={<MidMessages/>} />
+          <Route path="mid_help" element={<MidHelp/>} />
+          <Route path="mid_notifications" element={<MidNotifications/>} />
+          <Route path="mid_settings" element={<MidSettings/>} />
           {/* Speciaiist */}
           {/* Finance Manager */}
           {/* Service Manager */}

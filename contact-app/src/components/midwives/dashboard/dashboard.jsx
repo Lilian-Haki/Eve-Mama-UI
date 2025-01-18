@@ -1,14 +1,14 @@
 import React from "react";
-import TopNav from "../nav/topnav";
-import SideNav from "../nav/sidenav"
+import MidTopNav from "../nav/topnav";
+import MidSideNav from "../nav/sidenav"
 import Cards from "../dashboard/cards"
-function PDashboard() {
+function MidDashboard() {
     return(
         <div>
-       <TopNav/>
-       <SideNav/>    
+       <MidTopNav/>
+       <MidSideNav/>    
        <Cards/>        
         </div>
     );
 }
-export default PDashboard;
+export default MidDashboard;

@@ -1,30 +1,49 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import loginpic from '../../../assets/images/login.png';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import LockIcon from '@mui/icons-material/Lock';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+
 function PLogin() {
   return (
     <div className="inline-flex rounded ml-[250px] mt-[100px]">
-    <div className="bg-purple-800 rounded-[20px] w-[400px] h-[500px]">
-      <img src={loginpic} alt="Image of Girl logging in" />
-    </div>
+      <div className="bg-purple-800 rounded-[20px] w-[400px] h-[500px]">
+        <img src={loginpic} alt="Image of Girl logging in" />
+      </div>
       <div className="rounded-[20px] -ml-[30px] w-[400px] h-[500px] bg-yellow-100">
         <div className="mt-8 text-center">
-        <h4>Eve Mamas Clinic</h4>
-        <h4 className="underline ">Patient Login</h4>
+          <h4 className="font-cursive text-[30px] font-[20px] text-zinc-600">
+            Eve&apos;s Mama Birth Clinic
+          </h4>
+          <h4 className="italic underline text-zinc-600 font-roboto">
+            Patients Login
+          </h4>
         </div>
-        <form  className="mt-8 ml-2" action="">
-            <label htmlFor="">Enter Username</label><br></br>
-            <input type="text" placeholder="Enter Username" /><br></br>
-            <label htmlFor="">Enter Password</label><br></br>
-            <input type="text" placeholder="Enter Password" /><br></br>
-            <button>Login</button><br></br>
-            <a href="">Do you need any Help?</a>
-            <div>
-                <button>Quit</button>
-                <button>Register</button>
-            </div>
+        <form className="mt-8 ml-[20px]" action="">
+
+        <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField id="input-with-sx" label="Enter Username/ Email" variant="standard" />
+        </Box>
+
+        <Box sx={{ display: 'flex', alignItems: 'flex-end', marginTop:'14px' , marginBottom:"10px"}}>
+        <LockIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField id="input-with-sx" label="Enter Password" variant="standard" />
+        </Box>
+        <a className="text-zinc-600 ml-7 hover:text-purple-700" href="">Do you need any Help?</a>
+        <br></br>
+          <button className="font-roboto text-slate-100 hover:bg-purple-700 w-[200px] h-[40px] rounded-[10px] ml-5 mt-6 bg-purple-800">Login</button>
+          <div className="gap-[50px] flex mt-[110px] ml-5">
+            <button className="text-zinc-600 text-[15px] hover:text-purple-700"><HighlightOffIcon fontSize="40px" color="disabled"/> Quit</button>
+            <Link to="/register" className="text-zinc-600 text-[15px] hover:text-purple-700"><HowToRegIcon color="disabled" fontSize="70px"/>Register</Link>
+          </div>
         </form>
       </div>
-      </div>
+    </div>
   );
 }
 export default PLogin;

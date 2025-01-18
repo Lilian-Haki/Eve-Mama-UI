@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TopNav from "../nav/topnav";
 import SideNav from "../nav/sidenav"
 
-const PendingAppointments = () => {
+const MidPendingAppointments = () => {
   // Sample pending appointments data
   const [pendingAppointments, setPendingAppointments] = useState([
     {
@@ -49,7 +49,7 @@ const PendingAppointments = () => {
     <div>
     <TopNav/>
     <SideNav/>    
-    <div className="ml-[270px] -mt-[570px] min-h-screen bg-gray-100 p-8">
+    <div className="ml-[270px] min-h-screen px-8 py-24">
       <div className="max-w-6xl mx-auto bg-white shadow-md rounded-md p-6">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">Pending Appointments</h1>
 
@@ -104,4 +104,4 @@ const PendingAppointments = () => {
   );
 };
 
-export default PendingAppointments;
+export default MidPendingAppointments;

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import TopNav from "../nav/topnav";
+import SideNav from "../nav/sidenav"
 
-const HelpSection = () => {
+const MidHelpSection = () => {
   const [faqs, setFaqs] = useState([
     {
       question: "How do I book an appointment?",
@@ -45,8 +47,11 @@ const HelpSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <div className="max-w-4xl mx-auto bg-white shadow-md rounded-md p-6 space-y-8">
+    <div>
+    <TopNav/>
+    <SideNav/>    
+    <div className="min-h-screen pl-[180px] pt-[100px]">
+      <div className="max-w-4xl mx-auto bg-white shadow-md rounded-md px-[50px] space-y-8">
         <h1 className="text-2xl font-bold text-gray-800">Help Center</h1>
 
         {/* FAQ Section */}
@@ -115,7 +120,8 @@ const HelpSection = () => {
         </div>
       </div>
     </div>
+    </div>
   );
 };
 
-export default HelpSection;
+export default MidHelpSection;
