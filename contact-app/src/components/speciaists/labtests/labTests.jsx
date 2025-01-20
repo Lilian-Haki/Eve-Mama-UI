@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TopNav from "../nav/topnav";
 import SideNav from "../nav/sidenav"
 
-const LabTestsList = () => {
+const MidLabTestsList = () => {
   // Sample data for lab tests
   const [labTests, setLabTests] = useState([
     {
@@ -39,7 +39,7 @@ const LabTestsList = () => {
     <div>
     <TopNav/>
     <SideNav/>    
-    <div className="ml-[270px] -mt-[570px] min-h-screen bg-gray-100 p-8">
+    <div className="ml-[270px] min-h-screen px-8 py-24">
       <div className="max-w-6xl mx-auto bg-white shadow-md rounded-md p-6">
         <h1 className="text-2xl font-bold text-gray-800 mb-6">Lab Tests Performed</h1>
 
@@ -76,4 +76,4 @@ const LabTestsList = () => {
   );
 };
 
-export default LabTestsList;
+export default MidLabTestsList;

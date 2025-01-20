@@ -4,7 +4,7 @@ import TopCards from "../cards/topcards";
 import AppointmentsTable from "../cards/appointmentsTable";
 function DashboardCards() {
     return(
-        <div className="fixed ml-[300px] mt-[90px]">
+        <div className=" lg:ml-[300px] md:ml-[150px] pt-[90px]">
         <div>
       <TopCards/>
         </div>

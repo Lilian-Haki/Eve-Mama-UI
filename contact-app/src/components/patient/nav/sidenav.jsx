@@ -1,12 +1,12 @@
 import { useState, React } from "react";
 import {Link} from "react-router-dom";
 import logo from "../../../assets/images/logo.jpg";
-import { HomeOutlined,CalendarOutlined,CreditCardOutlined,MedicineBoxOutlined,PrinterOutlined,DotChartOutlined} from '@ant-design/icons';
+import { HomeOutlined,CalendarOutlined,CreditCardOutlined,MedicineBoxOutlined,PrinterOutlined,DotChartOutlined,MenuOutlined} from '@ant-design/icons';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 
 function SideNav() {
   const [selected, setSelected] = useState("dashboard"); // Default selection
-
+  const [isSidebarOpen, setSidebarOpen] = useState(false); // Sidebar collapse state
   const [openDropdown, setOpenDropdown] = useState(null);
   const handleClick = (menu) => {
     setSelected(menu);
@@ -25,11 +25,28 @@ function SideNav() {
       setOpenDropdown(null); // Close any dropdown
     }
   };
-    
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen); // Toggle sidebar
+  };
+
   return (
-    <div className="fixed w-[250px] bg-purple-500 h-auto">
-      <div>
-        <img
+    <div>
+    {/* Sidebar Toggle Button (Visible on small devices) */}
+    <button
+      className="md:hidden p-3 text-white bg-purple-600 rounded-full fixed top-4 left-4 z-50"
+      onClick={toggleSidebar}
+    >
+      {isSidebarOpen ? <MenuOutlined /> : <MenuOutlined />}
+    </button>
+
+    {/* Sidebar */}
+    <div
+      className={`fixed bg-purple-500 h-full ${
+        isSidebarOpen ? "w-[250px]" : "w-0"
+      } md:w-[80px] lg:w-[250px] transition-all duration-300 overflow-hidden`}
+    >
+    <div className={`p-4 ${isSidebarOpen || "md:block hidden"}`}>
+    <img
           className="h-[150px] w-[150px] ml-9 pt-2 rounded-[100%]"
           src={logo}
           alt=""
@@ -207,7 +224,7 @@ function SideNav() {
     {/* Help */}
     <Link to="/dashboard">
           <button
-            className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 mt-4 ml-6 w-[200px] rounded-lg `}
+            className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 ml-6 w-[200px] rounded-lg `}
             style={{
               color: selected === "help" ? "purple" : "pink",
             }}
@@ -217,7 +234,7 @@ function SideNav() {
             <p className="">Need Help?</p>
           </button>
         </Link>
-
+</div>
    </div>
   );
 }
