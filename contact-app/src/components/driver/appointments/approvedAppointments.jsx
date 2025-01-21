@@ -2,7 +2,7 @@ import React from "react";
 import TopNav from "../nav/topnav";
 import SideNav from "../nav/sidenav"
 
-const SpApprovedAppointments = () => {
+const MidApprovedAppointments = () => {
   // Sample approved appointments data
   const approvedAppointments = [
     {
@@ -78,4 +78,4 @@ const SpApprovedAppointments = () => {
   );
 };
 
-export default SpApprovedAppointments;
+export default MidApprovedAppointments;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SpNotificationsSection = () => {
+const NotificationsSection = () => {
   // Sample notification data
   const [notifications, setNotifications] = useState([
     { id: 1, title: "Appointment Confirmed", content: "Your appointment on 2024-12-22 is confirmed.", read: false, timestamp: "2024-12-20 09:00" },
@@ -77,4 +77,4 @@ const SpNotificationsSection = () => {
   );
 };
 
-export default SpNotificationsSection;
+export default NotificationsSection;

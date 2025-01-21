@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SLogin from "./components/staffLogin";
-import SRegister from "./components/staffRegister"
+import SRegister from "./components/staffRegister";
 
 // Patient imports
 import PLogin from "./components/patient/login/plogin";
@@ -31,18 +31,31 @@ import MidMessages from "./components/midwives/messages/messages";
 import MidNotifications from "./components/midwives/notification/notification";
 import MidSettings from "./components/midwives/settings/settings";
 
+// Specialists
+import SpDashboard from "./components/speciaists/dashboard/dashboard";
+import SpAddAppointments from "./components/speciaists/appointments/addApointment";
+import SpPendingAppointments from "./components/speciaists/appointments/pendingAppointment";
+import SpApprovedAppointments from "./components/speciaists/appointments/approvedAppointments";
+import SpCompletedAppointments from "./components/speciaists/appointments/completedAppointment";
+import SpLabTestsList from "./components/speciaists/labtests/labTests";
+import SpPrescriptionList from "./components/speciaists/prescriptions/prescriptions";
+import SpHelp from "./components/speciaists/help/help";
+import SpMessages from "./components/speciaists/messages/messages";
+import SpNotifications from "./components/speciaists/notification/notification";
+import SpSettings from "./components/speciaists/settings/settings";
+
 function App() {
   return (
       <Router>
         <Routes>
           {/* Shared */}
+          <Route path="landing_page" element={<LandingPage/>}/>
          <Route path="staff_register" element={<SRegister />} />
          <Route path="staff_login" element={<SLogin />} />
           {/* Patient */}
           <Route path="login" element={<PLogin />} />
           <Route path="register" element={<PRegister/>}/>
           <Route path="dashboard" element={<PDashboard/>} />
-          <Route path="landing_page" element={<LandingPage/>}/>
           <Route path="add_appointment" element={<AddAppointment/>}/>
           <Route path="approved_appointment" element={<ApprovedAppointment/>}/>
           <Route path="pending_appointment" element={<PendingAppointment/>}/>
@@ -65,11 +78,48 @@ function App() {
           <Route path="mid_notifications" element={<MidNotifications/>} />
           <Route path="mid_settings" element={<MidSettings/>} />
           {/* Speciaiist */}
+          <Route path="sp_dashboard" element={<SpDashboard/>} />
+          <Route path="sp_add_appointment" element={<SpAddAppointments/>}/>
+          <Route path="sp_approved_appointment" element={<SpApprovedAppointments/>}/>
+          <Route path="sp_pending_appointment" element={<SpPendingAppointments/>}/>
+          <Route path="sp_completed_appointment" element={<SpCompletedAppointments/>} />
+          <Route path="sp_lab_tests" element={<SpLabTestsList/>}/>
+          <Route path="sp_prescriptions" element={<SpPrescriptionList/>}/>
+          <Route path="sp_messages" element={<SpMessages/>} />
+          <Route path="sp_help" element={<SpHelp/>} />
+          <Route path="sp_notifications" element={<SpNotifications/>} />
+          <Route path="sp_settings" element={<SpSettings/>} />
           {/* Finance Manager */}
           {/* Service Manager */}
+
           {/* Driver */}
+          <Route path="sp_dashboard" element={<SpDashboard/>} />
+          <Route path="sp_add_appointment" element={<SpAddAppointments/>}/>
+          <Route path="sp_approved_appointment" element={<SpApprovedAppointments/>}/>
+          <Route path="sp_pending_appointment" element={<SpPendingAppointments/>}/>
+          <Route path="sp_completed_appointment" element={<SpCompletedAppointments/>} />
+          <Route path="sp_lab_tests" element={<SpLabTestsList/>}/>
+          <Route path="sp_prescriptions" element={<SpPrescriptionList/>}/>
+          <Route path="sp_messages" element={<SpMessages/>} />
+          <Route path="sp_help" element={<SpHelp/>} />
+          <Route path="sp_notifications" element={<SpNotifications/>} />
+          <Route path="sp_settings" element={<SpSettings/>} />
+
           {/* Lab Technician */}
+          
           {/* Supplier */}
+          <Route path="sp_dashboard" element={<SpDashboard/>} />
+          <Route path="sp_add_appointment" element={<SpAddAppointments/>}/>
+          <Route path="sp_approved_appointment" element={<SpApprovedAppointments/>}/>
+          <Route path="sp_pending_appointment" element={<SpPendingAppointments/>}/>
+          <Route path="sp_completed_appointment" element={<SpCompletedAppointments/>} />
+          <Route path="sp_lab_tests" element={<SpLabTestsList/>}/>
+          <Route path="sp_prescriptions" element={<SpPrescriptionList/>}/>
+          <Route path="sp_messages" element={<SpMessages/>} />
+          <Route path="sp_help" element={<SpHelp/>} />
+          <Route path="sp_notifications" element={<SpNotifications/>} />
+          <Route path="sp_settings" element={<SpSettings/>} />
+
         </Routes>
       </Router>
   );

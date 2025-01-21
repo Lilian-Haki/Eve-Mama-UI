@@ -2,7 +2,7 @@ import React from "react";
 import MidTopNav from "../nav/topnav";
 import MidSideNav from "../nav/sidenav"
 import Cards from "../dashboard/cards"
-function MidDashboard() {
+function SpDashboard() {
     return(
         <div>
        <MidTopNav/>
@@ -11,4 +11,4 @@ function MidDashboard() {
         </div>
     );
 }
-export default MidDashboard;
+export default SpDashboard;

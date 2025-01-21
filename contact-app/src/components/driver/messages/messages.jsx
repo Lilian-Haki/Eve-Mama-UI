@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TopNav from "../nav/topnav";
 import SideNav from "../nav/sidenav"
 
-const SpMessagesSection = () => {
+const MessagesSection = () => {
   // Sample conversation data
   const [messages, setMessages] = useState([
     { id: 1, sender: "Patient", content: "Hello, I need help with my prescription.", timestamp: "2024-12-20 09:00" },
@@ -84,4 +84,4 @@ const SpMessagesSection = () => {
   );
 };
 
-export default SpMessagesSection;
+export default MessagesSection;

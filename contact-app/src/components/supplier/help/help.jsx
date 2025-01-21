@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TopNav from "../nav/topnav";
 import SideNav from "../nav/sidenav"
 
-const SpHelpSection = () => {
+const MidHelpSection = () => {
   const [faqs, setFaqs] = useState([
     {
       question: "How do I book an appointment?",
@@ -124,4 +124,4 @@ const SpHelpSection = () => {
   );
 };
 
-export default SpHelpSection;
+export default MidHelpSection;

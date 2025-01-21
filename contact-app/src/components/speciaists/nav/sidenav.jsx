@@ -4,7 +4,7 @@ import logo from "../../../assets/images/logo.jpg";
 import { HomeOutlined,CalendarOutlined,MedicineBoxOutlined,MessageOutlined,DotChartOutlined} from '@ant-design/icons';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 
-function MidSideNav() {
+function SpSideNav() {
   const [selected, setSelected] = useState("dashboard"); // Default selection
 
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -29,7 +29,7 @@ function MidSideNav() {
       </div>
 
       {/* Dashboard */}
-      <Link to="/mid_dashboard">
+      <Link to="/sp_dashboard">
           <button
             className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 mt-4 ml-6 w-[200px] rounded-lg hover:bg-purple-300 `}
             style={{
@@ -59,7 +59,7 @@ function MidSideNav() {
         {/* Dropdown Menu */}
         {openDropdown === "appointments" && (
           <div className="ml-8 mt-2 flex flex-col space-y-2">
-            <Link to="/mid_add_appointment">
+            <Link to="/sp_add_appointment">
               <button
                 className={`w-[160px] h-10 py-1 px-4 text-left rounded-lg hover:bg-purple-300 ${
                   selected === "appointments-new" ? "bg-purple-600 text-white" : ""
@@ -69,7 +69,7 @@ function MidSideNav() {
                 New
               </button>
             </Link>
-            <Link to="/mid_pending_appointment">
+            <Link to="/sp_pending_appointment">
               <button
                 className={`w-[160px] h-10 py-1 px-4 text-left rounded-lg hover:bg-purple-300 ${
                   selected === "appointments-pending"
@@ -81,7 +81,7 @@ function MidSideNav() {
                 Pending
               </button>
             </Link>
-            <Link to="/mid_approved_appointment">
+            <Link to="/sp_approved_appointment">
               <button
                 className={`w-[160px] h-10 py-1 px-4 text-left rounded-lg hover:bg-purple-300 ${
                   selected === "appointments-approved"
@@ -93,7 +93,7 @@ function MidSideNav() {
                 Approved
               </button>
             </Link>
-            <Link to="/mid_completed_appointment">
+            <Link to="/sp_completed_appointment">
               <button
                 className={`w-[160px] h-10 py-1 px-4 text-left rounded-lg hover:bg-purple-300 ${
                   selected === "appointments-completed"
@@ -110,7 +110,7 @@ function MidSideNav() {
       </div>
 
       {/* Lab Tests */}
-      <Link to="/mid_lab_tests">
+      <Link to="/sp_lab_tests">
           <button
             className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 mt-4 ml-6 w-[200px] rounded-lg hover:bg-purple-300 `}
             style={{
@@ -126,7 +126,7 @@ function MidSideNav() {
         </Link>
 
         {/* Prescription */}
-        <Link to="/mid_prescriptions">
+        <Link to="/sp_prescriptions">
             <button
               className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 mt-4 ml-6 w-[200px] rounded-lg hover:bg-purple-300 `}
               style={{
@@ -142,7 +142,7 @@ function MidSideNav() {
           </Link>
 
     {/* Messages */}
-    <Link to="/mid_messages">
+    <Link to="/sp_messages">
           <button
             className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 mt-4 ml-6 w-[200px] rounded-lg hover:bg-purple-300 `}
             style={{
@@ -158,7 +158,7 @@ function MidSideNav() {
         </Link>
 
     {/* Help */}
-    <Link to="/mid_help">
+    <Link to="/sp_help">
           <button
             className={`hover:text-stone-950 text-white flex h-14 py-2 px-4 items-center gap-3 mt-4 ml-6 w-[200px] rounded-lg `}
             style={{
@@ -174,4 +174,4 @@ function MidSideNav() {
    </div>
   );
 }
-export default MidSideNav;
+export default SpSideNav;

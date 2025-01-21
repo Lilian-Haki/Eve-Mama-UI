@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TopNav from "../nav/topnav";
 import SideNav from "../nav/sidenav"
 
-const SpPrescriptionList = () => {
+const MidPrescriptionList = () => {
   // Sample data for prescriptions
   const [prescriptions, setPrescriptions] = useState([
     {
@@ -153,4 +153,4 @@ const SpPrescriptionList = () => {
   );
 };
 
-export default SpPrescriptionList;
+export default MidPrescriptionList;

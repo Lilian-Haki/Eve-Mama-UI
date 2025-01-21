@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TopNav from "../nav/topnav";
 import SideNav from "../nav/sidenav"
 
-const SpLabTestsList = () => {
+const MidLabTestsList = () => {
   // Sample data for lab tests
   const [labTests, setLabTests] = useState([
     {
@@ -76,4 +76,4 @@ const SpLabTestsList = () => {
   );
 };
 
-export default SpLabTestsList;
+export default MidLabTestsList;

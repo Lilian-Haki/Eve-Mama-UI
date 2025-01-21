@@ -5,7 +5,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 
-function MidTopNav() {
+function SpTopNav() {
   
   return (
     <div className="w-[1150px] fixed ml-[250px]">
@@ -24,4 +24,4 @@ function MidTopNav() {
     </div>
   );
 }
-export default MidTopNav;
+export default SpTopNav;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TopNav from "../nav/topnav";
 import SideNav from "../nav/sidenav"
 
-const SpPendingAppointments = () => {
+const MidPendingAppointments = () => {
   // Sample pending appointments data
   const [pendingAppointments, setPendingAppointments] = useState([
     {
@@ -104,4 +104,4 @@ const SpPendingAppointments = () => {
   );
 };
 
-export default SpPendingAppointments;
+export default MidPendingAppointments;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SpSettingsSection = () => {
+const SettingsSection = () => {
   // State for user settings
   const [settings, setSettings] = useState({
     name: "John Doe",
@@ -127,4 +127,4 @@ const SpSettingsSection = () => {
   );
 };
 
-export default SpSettingsSection;
+export default SettingsSection;

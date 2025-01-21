@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import TopNav from "../nav/topnav";
 import SideNav from "../nav/sidenav"
 
-const SpCompletedAppointments = () => {
+const MidCompletedAppointments = () => {
   // Sample completed appointments data
   const [completedAppointments, setCompletedAppointments] = useState([
     {
@@ -87,4 +87,4 @@ const SpCompletedAppointments = () => {
   );
 };
 
-export default SpCompletedAppointments;
+export default MidCompletedAppointments;

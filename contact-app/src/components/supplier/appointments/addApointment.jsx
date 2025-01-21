@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TopNav from "../nav/topnav";
 import SideNav from "../nav/sidenav"
 
-const SpAddAppointments = () => {
+const MidAddAppointments = () => {
   const [appointments, setAppointments] = useState([]);
   const [form, setForm] = useState({
     date: "",
@@ -108,4 +108,4 @@ const SpAddAppointments = () => {
   );
 };
 
-export default SpAddAppointments;
+export default MidAddAppointments;
