@@ -49,7 +49,7 @@ function App() {
       <Router>
         <Routes>
           {/* Shared */}
-          <Route path="landing_page" element={<LandingPage/>}/>
+          <Route path="/" element={<LandingPage/>}/>
          <Route path="staff_register" element={<SRegister />} />
          <Route path="staff_login" element={<SLogin />} />
           {/* Patient */}
@@ -106,7 +106,7 @@ function App() {
           <Route path="sp_settings" element={<SpSettings/>} />
 
           {/* Lab Technician */}
-          
+
           {/* Supplier */}
           <Route path="sp_dashboard" element={<SpDashboard/>} />
           <Route path="sp_add_appointment" element={<SpAddAppointments/>}/>
